@@ -6,11 +6,14 @@ set -e
 
 if [[ ! -z "${JUPYTERHUB_API_TOKEN}" ]]; then
   # launched by JupyterHub, use single-user entrypoint
+  echo 'Launching by JupyterHub'
   exec /usr/local/bin/start-singleuser.sh $*
 else
   if [[ ! -z "${JUPYTER_ENABLE_LAB}" ]]; then
+    echo 'Launching JupyterLab'
     . /usr/local/bin/start.sh jupyter lab $*
   else
+    echo 'Launching JpuyterNotebook'
     . /usr/local/bin/start.sh jupyter notebook $*
   fi
 fi
