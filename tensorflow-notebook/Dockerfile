@@ -25,3 +25,4 @@ RUN conda install numpy pyyaml scipy ipython mkl mkl-include && \
     conda install -c pytorch magma-cuda90 && conda clean -ya
 
 RUN conda install torchvision -c pytorch
+RUN conda install -c menpo opencv3 
