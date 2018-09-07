@@ -1,0 +1,16 @@
+version: '2.3'
+
+services:
+  notebook:
+    image: tackman/tensorflow-notebook
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/home/jovyan/work
+    networks:
+      - default
+    runtime: nvidia
+
+networks:
+  default:
+    driver: bridge
