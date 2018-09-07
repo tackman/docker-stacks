@@ -10,6 +10,8 @@ services:
     networks:
       - default
     runtime: nvidia
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
 
 networks:
   default:
