@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
   notebook:
-    image: tackman/tensorflow-notebook
+    image: tackman/jupyter-cuda
     ports:
       - 8888:8888
     volumes:
