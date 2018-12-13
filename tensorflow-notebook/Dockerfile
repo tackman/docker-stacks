@@ -34,3 +34,9 @@ RUN pip install onnx-tf
 
 RUN pip install pytorch2keras 
 
+RUN pip install -U tensorflow-gpu
+RUN pip install tensorflowjs
+RUN pip install -U protobuf
+RUN pip install -U keras-applications keras-preprocessing
+RUN pip install -U keras
+RUN pip install -U tensorflowjs
