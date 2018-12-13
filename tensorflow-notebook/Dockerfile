@@ -32,3 +32,5 @@ RUN conda install -c anaconda tensorflow-gpu
 RUN conda install -c conda-forge onnx
 RUN pip install onnx-tf
 
+RUN pip install pytorch2keras 
+
