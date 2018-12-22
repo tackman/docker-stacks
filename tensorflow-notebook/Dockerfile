@@ -20,7 +20,6 @@ RUN conda install --quiet --yes keras && \
   fix-permissions /home/$NB_USER
 
 RUN conda install numpy pyyaml scipy ipython mkl mkl-include
-RUN conda install pytorch=0.4.1
 RUN conda install -c pytorch magma-cuda90 && conda clean -ya
 
 RUN conda install torchvision -c pytorch
@@ -30,7 +29,21 @@ RUN conda install -c menpo opencv3
 RUN conda install -c anaconda tensorflow-gpu
 
 RUN conda install -c conda-forge onnx
-RUN pip install onnx-tf
 
-RUN pip install pytorch2keras 
+RUN conda install -c conda-forge hy
 
+RUN conda install pip
+
+RUN pip install git+https://github.com/ekaschalk/jedhy.git &&  \
+  pip install git+https://github.com/Calysto/calysto_hy.git
+
+
+USER root
+RUN python -m calysto_hy install
+
+
+RUN  fix-permissions $CONDA_DIR && \
+  fix-permissions /home/$NB_USER
+
+
+USER $NB_UID
