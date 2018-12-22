@@ -28,11 +28,10 @@ RUN conda install -c menpo opencv3
 # Install Tensorflow
 RUN conda install -c anaconda tensorflow-gpu
 
-RUN conda install -c conda-forge onnx
-
-RUN conda install -c conda-forge hy
 
 RUN conda install pip
+
+RUN pip install hy
 
 RUN pip install git+https://github.com/ekaschalk/jedhy.git &&  \
   pip install git+https://github.com/Calysto/calysto_hy.git
