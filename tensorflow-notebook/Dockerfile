@@ -46,3 +46,5 @@ RUN  fix-permissions $CONDA_DIR && \
 
 
 USER $NB_UID
+
+RUN pip install PyQt5
