@@ -48,3 +48,7 @@ RUN  fix-permissions $CONDA_DIR && \
 USER $NB_UID
 
 RUN pip install PyQt5
+
+RUN mkdir ~/.jupyter
+COPY jupyter_notebook_config.py /home/jovyan/.jupyter
+
